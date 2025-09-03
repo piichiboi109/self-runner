@@ -14,5 +14,5 @@ jobs:
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f k8s/deployment.yaml
-          kubectl get pods | grep eshop-web
-          kubectl get services | grep eshop-web
+          kubectl get pods -l app=eshop-web
+          kubectl get services -l app=eshop-web
